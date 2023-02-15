@@ -37,7 +37,7 @@ class SpeechOggAudioFileToText:
         except RequestError as error:
             print("Не удалось запросить результаты: {0}".format(error))
 
-openai.api_key = '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'
+openai.api_key = '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'
 bot = telebot.TeleBot('6010226043:AAGKtq_B73MFUjbCFL8v0yDVeoudxWI0IEw')
 
 
@@ -90,7 +90,3 @@ def voice_processing(message):
 
 
 bot.polling(none_stop=True)
-
-
-
-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
