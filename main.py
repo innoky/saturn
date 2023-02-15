@@ -18,14 +18,15 @@ class SpeechOggAudioFileToText:
         self.recognizer = Recognizer()
 
     def ogg_to_wav(self, file):
-        files = os.listdir(os.curdir)
-        args = ['ffmpeg','-i', file, 'test'+ str(len(files)) +'.wav']
+        args = ['ffmpeg','-i', file, 'test.wav']
         process = Popen(args)
         process.wait()
+        return 'test.wav'
+
     @property
     def text(self):
         files = os.listdir(os.curdir)
-        AUDIO_FILE = 'test'+ str(len(files)-1) +'.wav'
+        AUDIO_FILE = self.ogg_to_wav(files[-1])
         with AudioFile(AUDIO_FILE) as source:
             audio = self.recognizer.record(source)
         try:
@@ -36,7 +37,7 @@ class SpeechOggAudioFileToText:
         except RequestError as error:
             print("Не удалось запросить результаты: {0}".format(error))
 
-openai.api_key = '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'
+openai.api_key = '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'
 bot = telebot.TeleBot('6010226043:AAGKtq_B73MFUjbCFL8v0yDVeoudxWI0IEw')
 
 
@@ -89,3 +90,7 @@ def voice_processing(message):
 
 
 bot.polling(none_stop=True)
+
+
+
+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
