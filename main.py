@@ -37,7 +37,7 @@ class SpeechOggAudioFileToText:
         except RequestError as error:
             print("Не удалось запросить результаты: {0}".format(error))
 
-openai.api_key = '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'
+openai.api_key = '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'
 bot = telebot.TeleBot('6010226043:AAGKtq_B73MFUjbCFL8v0yDVeoudxWI0IEw')
 
 
